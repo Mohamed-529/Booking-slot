@@ -1,12 +1,13 @@
 let selectedSlot = null;
 let selectedCourt = "";
 let currentSlots = [];
+const BASE_URL = "https://booking-slot-qmd0.onrender.com";
 
 async function loadSlots(dateParam) {
   const date = dateParam || document.getElementById("datePicker").value;
   if (!date) return;
   try {
-    const res = await fetch(`/api/user/slots/${date}`);
+    const res = await fetch(`${BASE_URL}/api/user/slots/${date}`);
     const slots = await res.json();
     currentSlots = slots;
     render(slots);
@@ -82,7 +83,7 @@ async function submitBooking() {
   if (!selectedSlot) return alert("Select a slot by scrolling to it");
   if (!selectedCourt) return alert("Select a court");
 
-  const res = await fetch("/api/user/book", {
+  const res = await fetch(`${BASE_URL}/api/user/book`, {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({ date, slotId: selectedSlot.id })

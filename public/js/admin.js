@@ -1,8 +1,9 @@
+const BASE_URL = "https://booking-slot-qmd0.onrender.com";
 async function loadAdminSlots(dateParam) {
   const date = dateParam || document.getElementById("datePicker").value;
   if (!date) return;
   try {
-    const res = await fetch(`/api/admin/slots/${date}`);
+    const res = await fetch(`${BASE_URL}/api/admin/slots/${date}`);
     const slots = await res.json();
     renderAdmin(slots, date);
   } catch (err) {
@@ -43,7 +44,7 @@ function formatHour(hour) {
 }
 
 async function blockSlot(slotId, date) {
-  const res = await fetch("/api/admin/block", {
+    const res = await fetch(`${BASE_URL}/api/admin/block`, {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({ date, slotId })
@@ -57,7 +58,7 @@ async function blockSlot(slotId, date) {
 }
 
 async function unblockSlot(slotId, date) {
-  const res = await fetch("/api/admin/unblock", {
+  const res = await fetch(`${BASE_URL}/api/admin/unblock`, {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({ date, slotId })

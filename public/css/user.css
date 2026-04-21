@@ -1,0 +1,117 @@
+body {
+  font-family: Arial;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.container > * {
+  margin-bottom: 15px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.timeline-container {
+  width: 100%;
+  overflow-x: auto;
+  position: relative;
+}
+
+.timeline-wrapper {
+  width: 1400px;
+}
+
+.timeline {
+  display: flex;
+  height: 10px;
+}
+
+.slot {
+  width: 60px;
+  height: 10px;
+  flex-shrink: 0;
+}
+
+.green {
+  background: green;
+}
+
+.red {
+  background: red;
+}
+
+.labels {
+  display: flex;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.labels div {
+  width: 60px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.pointer {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.time-box {
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+}
+
+.courts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.courts button {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.courts button.selected {
+  background: green;
+  color: white;
+}
+
+.courts button:disabled {
+  background: #ddd;
+}
+
+.continue {
+  width: 100%;
+  padding: 12px;
+  background: green;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}

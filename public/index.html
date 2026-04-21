@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Booking UI</title>
+  <link rel="stylesheet" href="css/user.css">
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h3>Select Slot</h3>
+    <div>
+      <input type="date" id="datePicker">
+    </div>
+  </div>
+  <div class="timeline-container">
+    <div class="timeline-wrapper">
+      <div id="timeline" class="timeline"></div>
+      <div id="labels" class="labels"></div>
+    </div>
+    <div class="pointer">▼</div>
+  </div>
+  <div class="time-box">
+    <input id="startTime" readonly placeholder="Start Time">
+    <input id="endTime" readonly placeholder="End Time">
+  </div>
+  <div class="courts">
+    <button onclick="selectCourt(this)">Court AB</button>
+    <button disabled>Court CD</button>
+    <button onclick="selectCourt(this)">Court EF</button>
+    <button onclick="selectCourt(this)">Court GH</button>
+  </div>
+  <button class="continue" onclick="submitBooking()">Continue</button>
+</div>
+<script src="js/user.js"></script>
+</body>
+</html>

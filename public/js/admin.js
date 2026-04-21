@@ -50,6 +50,10 @@ async function blockSlot(slotId, date) {
     body: JSON.stringify({ date, slotId })
   });
   const data = await res.json();
+  const text = await res.text();
+console.log(text);
+
+const data = JSON.parse(text);
   if (data.success) {
     loadAdminSlots(date);
   } else {

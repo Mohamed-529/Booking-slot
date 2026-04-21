@@ -81,7 +81,11 @@
       return res.status(404).json({ error: 'Date not found' });
     }
 
-    const slot = slotData[date][slotId];
+    const slot = slotData[date]?.[slotId];
+
+    if (!slotData[date]) {
+  return res.status(404).json({ error: 'Date not initialized' });
+}
 
     if (!slot) {
       return res.status(404).json({ error: 'Slot not found' });
